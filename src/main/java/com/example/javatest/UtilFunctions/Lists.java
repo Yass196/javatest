@@ -3,13 +3,14 @@ package com.example.javatest.UtilFunctions;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Lists {
-
-    public static String EMPTYLISTERROR = "Couldn't do the partition, the list given is empty";
-    public static String NULLSIZEVALUE = "Couldn't do the partition, the size of the sub Lists required is null";
-    public static String SMALLLISTERROR = "Couldn't do the partition, the sub lists's size is bigger than the parent list's size";
+public class Lists {
+    //saving error messages in constants
+    public static final String EMPTYLISTERROR = "Couldn't do the partition, the list given is empty";
+    public static final String NULLSIZEVALUE = "Couldn't do the partition, the size of the sub Lists required is null";
+    public static final String SMALLLISTERROR = "Couldn't do the partition, the sub lists's size is bigger than the parent list's size";
 
     public static List<List> partition(List<Integer> liste, int taille) throws Exception {
+        //checking the basic conditions
         if (liste.isEmpty())
             throw new Exception(EMPTYLISTERROR);
         else if (taille == 0)
@@ -30,6 +31,7 @@ public abstract class Lists {
 
             }
             return result;
+            //returning the result
         }
     }
 

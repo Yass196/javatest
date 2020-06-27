@@ -19,7 +19,9 @@ class ListsTests {
     List<Integer> liste3;
     List<Integer> emptyList;
     @BeforeEach
+    // to skip the repitition in each function
     void init() {
+        //Creation of the inputs of the tests
         emptyList = Arrays.asList();
         liste1 = Arrays.asList(1, 8, 9, 12, 3, 10);
         liste2 = Arrays.asList(12, 81, 4, 5, 31, 17, 99);
@@ -28,6 +30,7 @@ class ListsTests {
 
     @Test()
     void partitionTest() throws Exception {
+        //Creating the outputs of the tests
         List<List> resultListe1_1 = Arrays.asList(Arrays.asList(1, 8), Arrays.asList(9, 12),
                 Arrays.asList(3, 10));
         List<List> resultListe1_2 = Arrays.asList(Arrays.asList(1, 8, 9),
@@ -70,6 +73,7 @@ class ListsTests {
 
     @Test
     void partitionErrorTests() {
+    //injecting wrong invalid inputs to test the error handling
     Throwable exception1 = Assertions.assertThrows(Exception.class, () -> Lists.partition(liste1, 7));
     Throwable exception2 = Assertions.assertThrows(Exception.class, () -> Lists.partition(liste2, 0));
     Throwable exception3 = Assertions.assertThrows(Exception.class, () -> Lists.partition(emptyList, 3));
